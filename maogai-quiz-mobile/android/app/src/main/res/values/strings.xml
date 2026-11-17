@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">毛概刷题</string>
+    <string name="title_activity_main">毛概刷题</string>
+    <string name="package_name">com.maogai.quiz</string>
+    <string name="custom_url_scheme">com.maogai.quiz</string>
+</resources>

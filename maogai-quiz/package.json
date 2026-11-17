@@ -1,0 +1,51 @@
+{
+  "name": "maogai-quiz",
+  "version": "1.0.0",
+  "description": "毛概刷题应用",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "copy-electron": "node scripts/copy-electron.js",
+    "electron:dev": "vite build && node scripts/copy-electron.js && electron .",
+    "electron:build": "vite build && node scripts/copy-electron.js && electron-builder",
+    "electron:build:win": "vite build && node scripts/copy-electron.js && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.maogai.quiz",
+    "productName": "毛概刷题",
+    "directories": {
+      "output": "release-v2"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "data/**/*"
+    ],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "zustand": "^4.5.4",
+    "lucide-react": "^0.400.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4"
+  }
+}

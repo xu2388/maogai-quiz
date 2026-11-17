@@ -1,0 +1,264 @@
+.quiz-page {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 进度条 */
+.progress-bar {
+  margin-bottom: 16px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #86868b;
+}
+
+.progress-track {
+  height: 6px;
+  background: #e5e5e7;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #007aff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* 模式提示标签 */
+.mode-hint {
+  text-align: center;
+  font-size: 13px;
+  color: #86868b;
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  background: #f5f5f7;
+  border-radius: 8px;
+}
+
+/* 题目卡片 */
+.question-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.question-type {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.question-type.single {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+}
+
+.question-type.multiple {
+  background: rgba(88, 86, 214, 0.1);
+  color: #5856d6;
+}
+
+.question-number {
+  font-size: 14px;
+  color: #c7c7cc;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* 选项列表 */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #f5f5f7;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: left;
+  font-family: inherit;
+}
+
+.option:hover:not(:disabled) {
+  border-color: #007aff;
+  background: rgba(0, 122, 255, 0.05);
+}
+
+/* 选项状态：选中(蓝色边框) */
+.option.selected {
+  border-color: #007aff;
+  background: rgba(0, 122, 255, 0.1);
+}
+
+/* 选项状态：正确(绿色) */
+.option.correct {
+  border-color: #34c759;
+  background: rgba(52, 199, 89, 0.1);
+}
+
+/* 选项状态：错误(红色) */
+.option.wrong {
+  border-color: #ff3b30;
+  background: rgba(255, 59, 48, 0.1);
+}
+
+.option:disabled {
+  cursor: not-allowed;
+}
+
+.option-key {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex: 1;
+  font-size: 15px;
+  color: #1d1d1f;
+}
+
+.option-icon {
+  flex-shrink: 0;
+}
+
+.option.correct .option-icon {
+  color: #34c759;
+}
+
+.option.wrong .option-icon {
+  color: #ff3b30;
+}
+
+/* 答案区域 - 仅即时模式且已答题后显示 */
+.answer-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e5e7;
+  animation: fadeIn 0.3s ease;
+}
+
+.answer-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.answer-result.correct {
+  background: rgba(52, 199, 89, 0.1);
+  color: #34c759;
+}
+
+.answer-result.wrong {
+  background: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+}
+
+.answer-detail {
+  font-size: 14px;
+  color: #86868b;
+  line-height: 1.8;
+}
+
+.answer-detail strong {
+  color: #1d1d1f;
+}
+
+/* 底部按钮 - 上一题/下一题导航 */
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  border: none;
+  font-family: inherit;
+}
+
+.footer-btn.primary {
+  background: #007aff;
+  color: white;
+}
+
+.footer-btn.primary:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.footer-btn.secondary {
+  background: #ffffff;
+  color: #1d1d1f;
+  border: 1px solid #e5e5e7;
+}
+
+.footer-btn.secondary:hover:not(:disabled) {
+  background: #f5f5f7;
+}
+
+.footer-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
